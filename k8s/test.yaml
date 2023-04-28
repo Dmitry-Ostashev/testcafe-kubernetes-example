@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testcafe-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testcafe-test
+  template:
+    metadata:
+      labels:
+        app: testcafe-test
+    spec:
+      containers:
+        - name: testcafe-test
+          image: ostashev/testcafe-experiment:latest
+          ports:
+            - containerPort: 1433
