@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "testcafe": "^2.5.1-rc.1"
+  },
+  "scripts": {
+    "test": "npx testcafe chrome:headless example.js -s takeOnFails=true path=./screenshots"
   }
 }

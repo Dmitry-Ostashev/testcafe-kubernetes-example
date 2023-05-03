@@ -1,4 +1,4 @@
-FROM node:18 as base
+FROM node:16 as base
 RUN apt-get update && apt-get install -y \
     fonts-liberation \
     libasound2 \
@@ -31,4 +31,4 @@ WORKDIR /app
 COPY ["package.json", "./"]
 RUN npm install
 COPY ["example.js", "./"]
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+ENTRYPOINT npm test
